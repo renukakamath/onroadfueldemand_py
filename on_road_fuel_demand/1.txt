@@ -1,0 +1,3 @@
+Executed SQL Statement : drop table `clincic_management_system`.`booking` 
+Error Number : 1213 
+Error Message: Deadlock found when trying to get lock; try restarting transaction 

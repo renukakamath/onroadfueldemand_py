@@ -1,0 +1,35 @@
+{%include "adminheader.html" %}
+<center>
+	<br>
+			<br>
+			<br>
+			<br>
+	<form>
+		<table class="table" style="width:500px">
+			<h1><b>PAYMENT DETAILS</b></h1>
+			<br>
+			<br>
+			<tr>
+				<th>Sl No</th>
+				<th>User Name</th>
+				<th>Driver Name</th>
+				<th>Amount</th>
+				<th>Date-time</th>
+				<th>Status</th>
+			</tr>
+
+			{% for row in data['payments'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['u_name']}}</td>
+				<td>{{row['d_name']}}</td>
+				<td>{{row['amount']}}</td>
+				<td>{{row['date_time']}}</td>
+				<td>{{row['status']}}</td>
+			</tr>
+			{% endfor %}
+			
+		</table>
+	</form>
+</center>
+{%include "footer.html" %}

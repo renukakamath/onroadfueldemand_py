@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#60E8A4"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USER REGISTRATION"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/etf"
+                android:layout_width="match_parent"
+                android:textStyle="bold|italic"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:background="#fff"
+                android:layout_marginTop="30dp"
+                android:hint="Enter First Name"
+                android:inputType="textPersonName" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/etl"
+                android:layout_width="match_parent"
+                android:hint="Enter last Name"
+                android:textStyle="bold|italic"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="30dp"
+                android:background="#fff"
+                android:inputType="textPersonName" />
+
+
+            <EditText
+                android:id="@+id/etph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Phone number"
+                android:background="#fff"
+                android:layout_marginTop="30dp"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/etem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:background="#fff"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold|italic"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etlicence"
+                android:layout_width="match_parent"
+                android:textStyle="bold|italic"
+                android:background="#fff"
+                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter Licence Number"
+                android:ems="10" />
+
+
+            <EditText
+                android:id="@+id/etu"
+                android:layout_width="match_parent"
+                android:textStyle="bold|italic"
+                android:background="#fff"
+                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter Username"
+                android:ems="10" />
+
+            <EditText
+                android:id="@+id/etpa"
+                android:layout_width="match_parent"
+                android:textStyle="bold|italic"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:ems="10"
+                android:layout_marginTop="30dp"
+                android:background="#fff"
+                android:layout_marginBottom="30dp"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/btreg"
+                android:layout_width="271dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#000"
+                android:layout_marginBottom="30dp"
+                android:textColor="#ffffff"
+                android:text="REGISTER" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

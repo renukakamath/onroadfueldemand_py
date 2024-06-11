@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#60E8A4"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAYMENT" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/cards_payments" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_lock_idle_lock" />
+
+                <EditText
+                    android:id="@+id/ed_card_num"
+                    android:layout_width="227dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:hint="CARD NUMBER"
+                    android:inputType="number"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@android:drawable/ic_dialog_dialer" />
+
+                <EditText
+                    android:id="@+id/ed_cvv"
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="CVV"
+                    android:inputType="number"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_today" />
+
+                <EditText
+                    android:id="@+id/ed_exp_date"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:editable="false"
+                    android:digits="0123456789/"
+                    android:hint="EXPIRY DATE(MM/YY)"
+                    android:inputType="date"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff" />
+            </TableRow>
+
+            <EditText
+                android:id="@+id/ed_amount"
+                android:layout_width="248dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="48dp"
+                android:ems="10"
+                android:gravity="center"
+                android:editable="false"
+                android:text="100"
+                android:inputType="number"
+                android:textColor="#fff"
+                android:textColorHint="#fff" />
+
+            <Button
+                android:id="@+id/bt_pay"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:text="   PAY   "
+                android:textColor="#fff" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

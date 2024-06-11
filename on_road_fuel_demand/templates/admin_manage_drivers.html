@@ -1,0 +1,116 @@
+{% include "adminheader.html" %}
+<center>
+	<br>
+	<br><br><br>
+	<form method="post">
+	
+		{% if data['updatess'] %}
+		<h1><b>UPDATE DRIVERS</b></h1>
+		<br>
+		<br>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>First Name</th>
+				<td><input type="text" name="fname" value="{{data['updatess'][0]['first_name']}}" required></td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" name="lname" value="{{data['updatess'][0]['last_name']}}" required></td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><input type="text" name="phone" value="{{data['updatess'][0]['phone']}}" pattern="[0-9]{10}" required></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+			<td><input type="email" name="email" value="{{data['updatess'][0]['email']}}" required></td>
+			</tr>
+			<tr>
+				<th>License Number</th>
+				<td><input type="text" name="lnum" value="{{data['updatess'][0]['licensenum']}}" class="form-control" required></td>
+			</tr>
+				<td colspan="2" align="center"><input type="submit" name="submitss" value="Update" class="btn btn-success"></td>
+			</tr>
+			
+		</table>
+
+
+
+		{% else %}
+
+		<h1><b>DRIVER'S REGISTRATION</b></h1>
+		<br>
+		<br>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>First Name</th>
+				<td><input type="text" name="fname"   pattern="[A-Za-z/s]{0,30}" required></td>
+			</tr>
+			<tr>
+				<th>Last Nmae</th>
+				<td><input type="text" name="lname"  pattern="[A-Za-z/s]{0,30}" required></td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><input type="text" name="phone"   pattern="[0-9]{10}" required></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+			<td><input type="email" name="email"  required></td>
+			</tr>
+			<tr>
+				<th>License Number</th>
+				<td><input type="text" name="lnum"  required></td>
+			</tr>
+			<tr>
+				<th>Username</th>
+				<td><input type="text" name="uname"  required></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="Password" name="pwd"  required></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="Add" class="btn btn-success"></td>
+			</tr>
+			
+		</table>
+
+
+		{% endif %}
+		<br>
+		<br>
+		<table class="table" style="width:500px">
+			<h1><b>DRIVER'S DETAILS</b></h1>
+			<br>
+			<br>
+			<tr>
+				<th>Sl no</th>
+				<th>Name</th>
+				
+				<th>Phone</th>
+				<th>Email</th>
+				<th>License Number</th>
+			</tr>
+			{% for row in data['drivers'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['d_name']}}</td>
+				
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td>{{row['licensenum']}}</td>
+				<td><a href="?action=update&did={{row['driver_id']}}">Update</a></td>
+				<td><a href="?action=remove&did={{row['driver_id']}}">Remove</a></td>
+				<td><a href="admin_assign_vehicles?did={{row['driver_id']}}&name={{row['d_name']}}">Assign Vehicles</a></td>
+				<td><a href="admin_view_assigned_vehicle?did={{row['driver_id']}}">View Vehicle Details</a></td>
+			</tr>
+			{% endfor %}
+
+
+		</table>
+
+		
+	</form>
+</center>
+{%include "footer.html" %}

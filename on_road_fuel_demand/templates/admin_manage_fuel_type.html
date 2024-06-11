@@ -1,0 +1,79 @@
+{% include "adminheader.html" %}
+<center>
+	<form method="post">
+		{% if data['upftype'] %}
+		<h1 style="color: violet"><b>UPDATE FUEL</b></h1>
+		<br>
+		
+		<table class="table" style="width:500px">
+			<tr>
+				<th>FUEL TYPE</th>
+				<td><input type="text" name="ftype" value="{{data['upftype'][0]['fuel_type']}}"  required></td>
+			</tr>
+			<tr>
+				<th>RATE</th>
+				<td><input type="text" name="rate" value="{{data['upftype'][0]['rate']}}"  required></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="utype" value="Update" class="btn btn-success"></td>
+			</tr>
+			
+		</table>
+
+
+
+		{% else %}
+
+		<h1><b>ADD FUEL TYPE</b></h1>
+		<br>
+	
+		<table class="table" style="width:500px">
+			<tr>
+				<th>Type</th>
+				<td><input type="text" name="ftype"   required></td>
+			</tr>
+			<tr>
+				<th>Rate</th>
+				<td><input type="text" name="rate"  required></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="type" value="Add" class="btn btn-success"></td>
+			</tr>
+			
+		</table>
+
+
+		{% endif %}
+		<br>
+		<br>
+		<table class="table" style="width:500px">
+			<h1><b>FUEL DETAILS</b></h1>
+			<br>
+		
+
+			<tr>
+				<th>Sl no</th>
+				<th>FUEL TYPE</th>
+				<th>RATE</th>
+				<th>DATE TIME</th>
+			</tr>
+			{% for row in data['fuel'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['type_name']}}</td>
+				<td>{{row['rate']}}</td>
+				<td>{{row['date_time']}}</td>
+				<td><a href="?action=update&tid={{row['type_id']}}">Update</a>
+					<a href="?action=remove&tid={{row['type_id']}}">Remove</a></td>
+			</tr>
+			{% endfor %}
+
+
+		</table>
+		
+	</form>
+</center>
+{% include"footer.html" %}
+

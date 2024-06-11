@@ -1,0 +1,29 @@
+{% include "adminheader.html" %}
+<center>
+	<form>
+		<table class="table" style="width:500px">
+			<h1><b>ASSIGNED VEHICLE DETAILS</b></h1>
+			<br>
+			<br>
+			<tr>
+				<th>Sl No</th>
+				<th>Vehicle</th>
+				<th>Reg. NO</th>
+				<th>Capacity</th>
+				
+			</tr>
+			{% for row in data['assign'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{row['vehicle']}}</td>
+				<td>{{row['regnum']}}</td>
+				<td>{{row['capacity']}}</td>
+		
+		<td><a target="_blank" href="http://www.google.com/maps?q={{row['latitude']}},{{row['longitude']}} ">Map View</a></td>
+			
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+</center>
+{%include "footer.html" %}
